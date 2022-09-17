@@ -1,0 +1,9 @@
+.addItem-div {
+    align-items: center;
+    background-image: url(https://img.freepik.com/free-photo/beautiful-scenery-river-surrounded-by-greenery-forest_181624-40482.jpg?size=626&ext=jpg&ga=GA1.2.1198299981.1652771125);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    opacity: 0.8;
+}
