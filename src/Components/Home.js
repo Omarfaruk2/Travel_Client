@@ -3,15 +3,17 @@ import Navbar from '../Share/Navbar'
 import Articles from './Articles'
 import Banner from './Banner'
 import Destinations from './Destinations'
+import Gelary from './Gelary'
 import Service from './Service'
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
 
             <Banner /><br />
             <Destinations />
             <Service />
+            <Gelary />
             <Articles />
         </div>
     )

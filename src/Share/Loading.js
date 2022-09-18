@@ -1,11 +1,11 @@
 import React from 'react'
-import { MoonLoader } from 'react-spinners'
+import { HashLoader } from 'react-spinners'
 
 const Loading = () => {
 
     return (
         <div className='mt-28'>
-            <MoonLoader className='mx-auto text-primary' />
+            <HashLoader color="#36d7b7" />
         </div>
     )
 }

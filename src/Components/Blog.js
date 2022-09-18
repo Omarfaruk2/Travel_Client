@@ -27,7 +27,7 @@ const Blog = () => {
 
     return (
 
-        <div className='h-[150vh]'>
+        <div className='my-10 bg-white'>
             <div className='py-20 bg-yellow-50'>
                 <p className='text-5xl text-center w-1/2 font-bold mx-auto'>{name}</p>
                 <p className='text-center mt-5 font-serif'>December 10 , 2016</p>

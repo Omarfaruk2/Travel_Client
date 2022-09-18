@@ -14,9 +14,10 @@ const Articles = () => {
     if (isLoading) {
         return <p>Loading</p>
     }
+    console.log(data, "data")
 
     return (
-        <div className='my-20'>
+        <div className='my-5'>
             <div>
                 <p className='text-4xl text-center text-black font-bold'>Articles & Tips</p>
 

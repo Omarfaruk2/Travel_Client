@@ -36,7 +36,7 @@ const Navbar = () => {
                             <CustomLink className="mx-3" to="/products">Related Products</CustomLink>
                             <CustomLink className="mx-3" to="/blog">Blog</CustomLink>
                             <CustomLink className="mx-3" to="/login">Login</CustomLink>
-                            {/* <CustomLink className="mx-3" to="/registation">Register</CustomLink> */}
+                            <CustomLink className="mx-3" to="/registation">Register</CustomLink>
                         </ul>
                     </div>
                     {/* <div className="navbar-end">

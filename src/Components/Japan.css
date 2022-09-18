@@ -1,0 +1,77 @@
+.behind {
+    display: none;
+    color: white;
+    font-size: 20px;
+}
+
+.cus-card {
+    overflow: hidden;
+}
+
+.cus-card2 {
+    overflow: hidden;
+}
+
+.cus-card3 {
+    overflow: hidden;
+}
+
+
+.image {
+    transition: transform 1s, filter 1s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(100%);
+    position: relative;
+}
+
+.image2 {
+    transition: transform 1s, filter 1s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(100%);
+    position: relative;
+}
+
+.image3 {
+    transition: transform 1s, filter 1s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(100%);
+    position: relative;
+}
+
+.cus-card:hover .image {
+    filter: brightness(80%);
+    transform: scale(1.2);
+}
+
+.cus-card2:hover .image2 {
+    filter: brightness(70%);
+    transform: scale(1.2);
+}
+
+.cus-card3:hover .image3 {
+    filter: brightness(70%);
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.behind {
+    transition: transform 1s, filter 1.5s ease-in-out;
+}
+
+.cus-card:hover .behind {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 14px;
+    margin-left: 20px;
+}
