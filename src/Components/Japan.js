@@ -9,7 +9,7 @@ const Japan = () => {
     const param = useParams()
     const name = param?.name
 
-    console.log(name)
+    // console.log(name)
 
     const { isLoading, error, data } = useQuery(['repoData'], () =>
         fetch(`http://localhost:5000/country/${name}`).then(res =>
@@ -20,7 +20,7 @@ const Japan = () => {
         return <Loading />
     }
 
-    console.log(data, "america win ")
+    // console.log(data, "america win ")
 
 
 

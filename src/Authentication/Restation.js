@@ -2,6 +2,7 @@ import { signOut } from 'firebase/auth'
 import React from 'react'
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../firebase.init'
 import Loading from '../Share/Loading'
 
@@ -9,9 +10,18 @@ const Restation = () => {
     const { register, formState: { errors }, handleSubmit } = useForm()
     const [signInWithGoogle, guser, gloading,] = useSignInWithGoogle(auth)
 
+    let navigate = useNavigate()
+    let location = useLocation()
+    let from = location.state?.from?.pathname || "/"
+
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth)
 
     const [updateProfile, updating,] = useUpdateProfile(auth)
+
+    const handleGoogle = () => {
+        signInWithGoogle()
+    }
+
     const onSubmit = async (data) => {
         const displayName = data.displayName
         const email = data?.email
@@ -19,8 +29,6 @@ const Restation = () => {
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName })
     }
-
-
 
 
     if (error) {
@@ -34,9 +42,11 @@ const Restation = () => {
     if (loading || gloading || updating) {
         return <Loading />
     }
+
     if (user || guser) {
-        console.log(user, guser, "user")
+        navigate(from, { replace: true })
     }
+
 
 
     return (
@@ -86,7 +96,9 @@ const Restation = () => {
                         {/* <input type="submit" /> */}
                         <button className='btn w-full btn-success mt-5 text-white' type="submit">Registation</button>
                     </form>
-                    <button onClick={() => signOut(auth)} className='btn btn-secondary'>Sing out</button>
+                    <button onClick={() => handleGoogle()} className='btn w-full btn-error mt-5 text-white' type="submit">Google</button>
+
+                    <Link to="/login">Login</Link>
                 </div>
             </div>
 

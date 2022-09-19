@@ -16,8 +16,8 @@ const Service = () => {
                 <div className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
-                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-green-100
-                            hover:bg-green-500 hover:text-white
+                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
+                            hover:bg-primary hover:text-white
                             rounded-bl-lg text-green-400' icon="fluent-emoji-high-contrast:light-rail" /></p>
                             <p className='text-2xl'>Rail Booking</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin lobortis turpis, sit amet aliquet metus.</p>
@@ -29,8 +29,8 @@ const Service = () => {
                 <div className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
-                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-green-100
-                            hover:bg-green-500 hover:text-white
+                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
+                            hover:bg-primary hover:text-white
                             rounded-bl-lg text-green-400'icon="bxs:hotel" /></p>
                             <p className='text-2xl'>Hotel Booking</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin lobortis turpis, sit amet aliquet metus.</p>
@@ -43,8 +43,8 @@ const Service = () => {
                 <div className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
-                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-green-100
-                            hover:bg-green-500 hover:text-white
+                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
+                            hover:bg-primary hover:text-white
                             rounded-bl-lg text-green-400'  icon="ic:round-flight" /></p>
                             <p className='text-2xl'>Flight Booking</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin lobortis turpis, sit amet aliquet metus.</p>
@@ -57,8 +57,8 @@ const Service = () => {
                 <div className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
-                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-green-100
-                            hover:bg-green-500 hover:text-white
+                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
+                            hover:bg-primary hover:text-white
                             rounded-bl-lg text-green-400'   icon="fontisto:ticket-alt" /></p>
                             <p className='text-2xl'>Ticket Booking</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin lobortis turpis, sit amet aliquet metus.</p>
@@ -70,8 +70,8 @@ const Service = () => {
                 <div className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
-                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-green-100
-                            hover:bg-green-500 hover:text-white
+                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
+                            hover:bprimary hover:text-white
                             rounded-bl-lg text-green-400'   icon="bxs:ship" /></p>
                             <p className='text-2xl'>Ship Booking</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin lobortis turpis, sit amet aliquet metus.</p>
@@ -83,9 +83,9 @@ const Service = () => {
                 <div className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
-                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-green-100
-                            hover:bg-green-500 hover:text-white
-                            rounded-bl-lg text-green-400'   icon="fluent:building-home-24-filled" /></p>
+                            <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
+                            hover:bg-primary hover:text-white
+                            rounded text-green-400'   icon="fluent:building-home-24-filled" /></p>
                             <p className='text-2xl'>Amazing Tour</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin lobortis turpis, sit amet aliquet metus.</p>
                         </div>

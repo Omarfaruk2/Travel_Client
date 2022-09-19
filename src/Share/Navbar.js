@@ -1,10 +1,22 @@
+import { signOut } from 'firebase/auth'
 import React from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { Link } from 'react-router-dom'
+import auth from '../firebase.init'
 import CustomLink from '../Hooks/CustomLink'
+import Loading from './Loading'
 
 const Navbar = () => {
 
+    const [user, loading,] = useAuthState(auth)
+
+    if (loading) {
+        return <Loading />
+    }
+
+
     return (
-        <div className='bg-white py-1'>
+        <div className='bg-primary py-1'>
             <div className='w-5/6 mx-auto'>
                 <div className="navbar ">
                     <div className="navbar-start">
@@ -13,21 +25,21 @@ const Navbar = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </label>
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                <li><a>Item 1</a></li>
+                                <li><>Item 1</></li>
                                 <li tabIndex={0}>
-                                    <a className="justify-between">
+                                    {/* <a className="justify-between">
                                         Parent
                                         <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                                     </a>
                                     <ul className="p-2">
                                         <li><a>Submenu 1</a></li>
                                         <li><a>Submenu 2</a></li>
-                                    </ul>
+                                    </ul> */}
                                 </li>
-                                <li><a>Item 3</a></li>
+                                <li><>Item 3</></li>
                             </ul>
                         </div>
-                        <a className="btn btn-ghost normal-case text-xl">G Ture</a>
+                        <Link to="/" className="btn btn-ghost text-white normal-case text-xl">G Ture</Link>
                     </div>
                     <div className="navbar-end hidden lg:flex">
                         <ul className="menu me-auto menu-horizontal p-0 font-bold text-sm">
@@ -35,8 +47,11 @@ const Navbar = () => {
                             <CustomLink className="mx-3" to="/bokking">My Booking</CustomLink>
                             <CustomLink className="mx-3" to="/products">Related Products</CustomLink>
                             <CustomLink className="mx-3" to="/blog">Blog</CustomLink>
-                            <CustomLink className="mx-3" to="/login">Login</CustomLink>
-                            <CustomLink className="mx-3" to="/registation">Register</CustomLink>
+                            <CustomLink className="mx-3" to="/hotel">Hotel</CustomLink>
+                            {
+                                user ? <div onClick={() => signOut(auth)} className='cursor-pointer text-white'><b >Log out</b></div> :
+                                    <CustomLink className="mx-3" to="/login">Login</CustomLink>
+                            }
                         </ul>
                     </div>
                     {/* <div className="navbar-end">

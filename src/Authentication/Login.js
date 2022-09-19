@@ -1,16 +1,30 @@
-import { signOut } from 'firebase/auth'
 import React from 'react'
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../firebase.init'
 import Loading from '../Share/Loading'
 
 const Login = () => {
 
+    let navigate = useNavigate()
+    let location = useLocation()
+    let from = location.state?.from?.pathname || "/"
+
     const { register, formState: { errors }, handleSubmit } = useForm()
 
-    const onSubmit = (data) => console.log(data)
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth)
+    const [signInWithGoogle, guser, gloading,] = useSignInWithGoogle(auth)
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth)
+
+    const handleGoogle = () => {
+        signInWithGoogle()
+    }
+
+    const onSubmit = (data) => {
+        signInWithEmailAndPassword(data?.email, data?.password)
+        console.log(data)
+    }
+
 
     if (error) {
         return (
@@ -19,15 +33,13 @@ const Login = () => {
             </div>
         )
     }
-    if (loading) {
+    if (loading || gloading) {
         return <Loading />
     }
-    if (user) {
-        return (
-            <div>
-                <p>Signed In User: {user.email}</p>
-            </div>
-        )
+
+
+    if (user || guser) {
+        navigate(from, { replace: true })
     }
 
     return (
@@ -40,17 +52,6 @@ const Login = () => {
                 <div className="card-body w-full mx-auto ">
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-
-                        {/* name */}
-                        <div className="form-control w-full ">
-                            <label className="label">
-                                <span className="label-text">Type Your Full Name</span>
-                            </label>
-                            <input
-                                {...register("name", { required: true })}
-                                type="text" placeholder="Type Full Name" className="input  input-bordered w-full" />
-                            {errors.name?.type === 'required' && "First name is required"}
-                        </div>
 
 
                         {/* Email */}
@@ -76,9 +77,11 @@ const Login = () => {
                         </div>
 
                         {/* <input type="submit" /> */}
-                        <button className='btn w-full btn-success mt-5 text-white' type="submit">Registation</button>
+                        <button className='btn w-full btn-success mt-5 text-white' type="submit">Login</button>
+
                     </form>
-                    <button onClick={() => signOut(auth)} className='btn btn-secondary'>Sing out</button>
+                    <button onClick={() => handleGoogle()} className='btn w-full btn-error mt-5 text-white' type="submit">Google</button>
+                    <Link to="/registation">Register</Link>
                 </div>
             </div>
 

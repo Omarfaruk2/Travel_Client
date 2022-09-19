@@ -7,6 +7,8 @@ import { useForm } from 'react-hook-form'
 import { format } from 'date-fns'
 import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import auth from '../firebase.init'
 
 
 const Details = () => {
@@ -14,7 +16,8 @@ const Details = () => {
     const valueRaf = useRef("")
     const [totalprice, setTotalPrice] = useState('')
 
-    // console.log()
+    const [user, loading,] = useAuthState(auth)
+
 
 
     const disabledDays = [
@@ -33,18 +36,21 @@ const Details = () => {
             res.json()
         )
     )
-    if (isLoading) {
+    if (isLoading || loading) {
         return <Loading />
     }
 
-    // refetch()
+    refetch()
+
+    console.log(user, "user add")
+
     const pakage = data[0]
     const { firstimg, firstPrice, firstdays, } = pakage
 
 
     const onSubmit = (data) => {
         const person = valueRaf.current?.value
-
+        const firstimg = pakage.firstimg
         const address = data?.address
         const date = data?.date
         const email = data?.email
@@ -53,7 +59,7 @@ const Details = () => {
         const phone = data?.phone
 
         const formData = {
-            person, address, date, email, name, personPrice, phone
+            person, address, date, email, name, personPrice, phone, firstimg
         }
 
         console.log(formData)

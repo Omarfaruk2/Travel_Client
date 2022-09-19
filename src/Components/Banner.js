@@ -57,7 +57,7 @@ const Banner = () => {
                                     data-aos="fade-right"
                                     data-aos-easing="linear"
                                     data-aos-duration="1500"
-                                    className="btn btn-success text-white rounded-lg">Contact Us</button>
+                                    className="btn btn-primary text-white rounded-lg">Contact Us</button>
                             </div>
 
                             <div>
@@ -95,7 +95,7 @@ const Banner = () => {
                                     data-aos-easing="linear"
                                     data-aos-duration="1500"
                                     className="my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quisquam ullam quibusdam ea esse doloribus impedit magni doloremque laudantium praesentium?</p>
-                                <button className="btn btn-success text-white rounded-lg">Contact Us</button>
+                                <button className="btn btn-primary text-white rounded-lg">Contact Us</button>
                             </div>
 
                             <div>
@@ -131,7 +131,7 @@ const Banner = () => {
                                     data-aos-easing="linear"
                                     data-aos-duration="1500"
                                     className="my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quisquam ullam quibusdam ea esse doloribus impedit magni doloremque laudantium praesentium?</p>
-                                <button className="btn btn-success text-white rounded-lg">Contact Us</button>
+                                <button className="btn btn-primary text-white rounded-lg">Contact Us</button>
                             </div>
 
                             <div>
