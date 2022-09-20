@@ -65,7 +65,7 @@ const Blog = () => {
 
                 </div>
 
-                <div className="fix-blog col-span-1 ">
+                <div className="fix-blog col-span-1">
                     <div>
                         <div className='p-5 bg-base-200 rounded-xl mt-72 fixed top-0'>
                             <p className='font-bold text-xl'>Newsletter</p>

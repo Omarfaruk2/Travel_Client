@@ -14,7 +14,6 @@ const Articles = () => {
     if (isLoading) {
         return <p>Loading</p>
     }
-    console.log(data, "data")
 
     return (
         <div className='my-5'>

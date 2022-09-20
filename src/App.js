@@ -9,7 +9,14 @@ import Home from './Components/Home'
 import Hotel from './Components/Hotel'
 import Japan from './Components/Japan'
 import SingleBookingHotel from './Components/SingleBookingHotel'
+import Dashboard from './Dashboard/Dashboard'
+import HotelBooking from './Dashboard/HotelBooking'
+import MyCountry from './Dashboard/MyCountry'
+import Myproducts from './Dashboard/Myproducts'
+import Myprofile from './Dashboard/Myprofile'
 import Requareautlhe from './Hooks/Requareautlhe'
+import SellShopItems from './Pages/Shop/SellShopItems'
+import Shop from './Pages/Shop/Shop'
 import Footer from './Share/Footer'
 import Navbar from './Share/Navbar'
 
@@ -27,17 +34,48 @@ function App() {
         <Route path='/blog' element={<Blog />} />
         <Route path='/login' element={<Login />} />
 
-        <Route path='/hotel/:id' element={<SingleBookingHotel />} />
+
+        {/* nasted route */}
+        <Route path="dashboard" element={<><Dashboard /></>} >
+          <Route index element={<Myprofile />}></Route>
+          <Route path='hotel' element={< HotelBooking />}></Route >
+          <Route path='product' element={< Myproducts />}></Route >
+          <Route path='country' element={< MyCountry />}></Route >
+        </Route>
+
+
+        <Route path='/shop' element={
+          <Requareautlhe>
+            <Shop />
+          </Requareautlhe>
+        } />
+
+        <Route path='/shop/:id' element={
+          <Requareautlhe>
+            <SellShopItems />
+          </Requareautlhe>
+        } />
+
+        <Route path='/hotel/:id' element={
+          <Requareautlhe>
+            <SingleBookingHotel />
+          </Requareautlhe>
+        } />
         <Route path='/hotel' element={
           <Requareautlhe>
             <Hotel />
           </Requareautlhe>
         } />
-        <Route path='/tour/:name' element=
-          {<Japan />
-          } />
+        <Route path='/tour/:name' element={
+          <Requareautlhe>
+            <Japan />
+          </Requareautlhe>
+
+        } />
         <Route path='/tour/:name/:id' element={
-          <Details />
+          <Requareautlhe>
+            <Details />
+          </Requareautlhe>
         } />
 
         <Route path='/registation' element={<Restation />} />

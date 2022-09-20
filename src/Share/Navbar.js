@@ -44,10 +44,17 @@ const Navbar = () => {
                     <div className="navbar-end hidden lg:flex">
                         <ul className="menu me-auto menu-horizontal p-0 font-bold text-sm">
                             <CustomLink className="mx-3" to="/">Home</CustomLink>
-                            <CustomLink className="mx-3" to="/bokking">My Booking</CustomLink>
-                            <CustomLink className="mx-3" to="/products">Related Products</CustomLink>
+
+                            {
+                                user &&
+                                <>
+                                    <CustomLink className="mx-3" to="/hotel">Hotel</CustomLink>
+                                    <CustomLink className="mx-3" to="/shop">Related Products</CustomLink>
+                                    <CustomLink className="mx-3" to="/dashboard">Dashboard</CustomLink>
+                                </>
+                            }
+
                             <CustomLink className="mx-3" to="/blog">Blog</CustomLink>
-                            <CustomLink className="mx-3" to="/hotel">Hotel</CustomLink>
                             {
                                 user ? <div onClick={() => signOut(auth)} className='cursor-pointer text-white'><b >Log out</b></div> :
                                     <CustomLink className="mx-3" to="/login">Login</CustomLink>

@@ -13,20 +13,19 @@ import auth from '../firebase.init'
 
 const Details = () => {
     const navigate = useNavigate()
+
     const valueRaf = useRef("")
     const [totalprice, setTotalPrice] = useState('')
 
     const [user, loading,] = useAuthState(auth)
 
-
-
     const disabledDays = [
-        new Date(2022, 9, 10),
-        new Date(2022, 9, 12),
-        new Date(2022, 9, 20),
-        { from: new Date(2022, 9, 18), to: new Date(2022, 9, 29) }
+        new Date(2022, 8, 10),
+        new Date(2022, 8, 12),
+        { from: new Date(2022, 8, 1), to: new Date(2022, 8, 14) }
     ]
     const [date, setDate] = useState(new Date())
+
     const param = useParams()
     const { name, id } = param
     const { register, formState: { errors }, handleSubmit } = useForm()
@@ -40,30 +39,33 @@ const Details = () => {
         return <Loading />
     }
 
-    refetch()
+    // refetch()
 
-    console.log(user, "user add")
+    const { displayName, email } = user || {}
 
     const pakage = data[0]
-    const { firstimg, firstPrice, firstdays, } = pakage
-
+    const { firstimg, firstPrice, firstdays, firstPlaceName } = pakage
 
     const onSubmit = (data) => {
         const person = valueRaf.current?.value
-        const firstimg = pakage.firstimg
-        const address = data?.address
-        const date = data?.date
-        const email = data?.email
-        const name = data?.name
-        const personPrice = data?.personPrice
-        const phone = data?.phone
+        const formData = { ...data, person: person }
+        const firstimg = pakage?.firstimg
+        const updateForm = { ...formData, firstimg: firstimg }
 
-        const formData = {
-            person, address, date, email, name, personPrice, phone, firstimg
-        }
-
-        console.log(formData)
-        navigate("/bokking")
+        const url = "http://localhost:5000/countryFlightbooking"
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updateForm)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.insertedId);
+                data = {}
+                navigate('/dashboard/country')
+            })
     }
 
     return (
@@ -158,62 +160,72 @@ const Details = () => {
 
                 {/* Booking  */}
 
-                <div className=' mt-16 col-span-2 bg-slate-200 '>
-                    <h2 className='text-4xl font-bold text-center'>Discover {name.toUpperCase()}</h2>
-                    <p className='text-3xl font-bold text-center p-3 bg-lime-500'>From ${firstPrice} Per Person</p>
-                    <div className='mx-auto mt-10 '>
-                        <p className='text-center'>
+                <div className=' mt-16 col-span-2 bg-slate-200  mb-10 pb-5 '>
+                    <div className='top-0 sticky'>
+                        <h2 className='text-4xl font-bold text-center'>Discover {name.toUpperCase()}</h2>
+                        <p className='text-3xl font-bold text-center p-3 bg-lime-500'>From ${firstPrice} Per Person</p>
+                        <div className='mx-auto mt-10 '>
+                            <p className='text-center'>
 
-                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <form onSubmit={handleSubmit(onSubmit)}>
 
-                                <input placeholder="Your FUll Name" type="text" {...register("name", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
-                                {errors.name?.type === 'required' && "First name is required"}
+                                    <input placeholder="Your FUll Name" value={displayName} type="text" {...register("name", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
+                                    {errors.name?.type === 'required' && "First name is required"}
 
-                                <input placeholder="Your Phone Number" type="number" {...register("phone", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
-                                {errors.phone?.type === 'required' && "First name is required"}
+                                    <input placeholder="Your Phone Number" type="number" {...register("phone", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
+                                    {errors.phone?.type === 'required' && "First name is required"}
 
-                                <input placeholder="Your Email Address" type="email" {...register("email", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
-                                {errors.email?.type === 'required' && "First name is required"}
+                                    <input placeholder="Your Email Address" value={email} type="email" {...register("email", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
+                                    {errors.email?.type === 'required' && "First name is required"}
 
-                                <input placeholder="Your Address" type="text" {...register("address", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
-                                {errors.address?.type === 'required' && "First name is required"}
+                                    <input placeholder="Your Address" type="text" {...register("address", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
+                                    {errors.address?.type === 'required' && "First name is required"}
 
-                                <div className='grid grid-cols-4'>
-                                    <div className="col-span-1"></div>
-                                    <DayPicker
-                                        className='mx-auto col-span-2'
-                                        mode="single"
-                                        selected={date}
-                                        onSelect={setDate}
-                                        // modifiersClassNames
-                                        disabled={disabledDays}
-                                    />
-                                </div>
+                                    <input placeholder="Your Address" value={firstPlaceName} type="text" {...register("tourPlace", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
+                                    {errors.tourPlace?.type === 'required' && "First name is required"}
 
-                                <input {...register("date", { required: true })} value={format(date, 'PP')} type="text" placeholder="Type here" className="input input-bordered input-primary w-3/5  my-2" />
-
-                                {/*------------------------------------------perspn---------------------------- */}
+                                    <input placeholder="Your Address" value={name.toUpperCase()} type="text" {...register("tourcountry", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
+                                    {errors.tourcountry?.type === 'required' && "First name is required"}
 
 
-                                <input
+                                    {/* date */}
+                                    <div className='grid grid-cols-4'>
+                                        <div className="col-span-1"></div>
+                                        <DayPicker
+                                            className='mx-auto col-span-2'
+                                            mode="single"
+                                            selected={date}
+                                            onSelect={setDate}
+                                            // modifiersClassNames
+                                            disabled={disabledDays}
+                                        />
+                                    </div>
 
-                                    ref={valueRaf}
-                                    onChange={() => setTotalPrice(valueRaf.current?.value * firstPrice)}
-                                    placeholder="Persone Number" type="number" className="input input-bordered input-primary w-3/5  my-2" />
+                                    <input {...register("date", { required: true })} value={format(date, 'PP')} type="text" placeholder="Type here" className="input input-bordered input-primary w-3/5  my-2" />
 
-                                <input
-                                    defaultValue="0"
-                                    readOnly
-                                    value={totalprice}
-                                    placeholder="Persone Number" type="number" {...register("personPrice", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
+                                    {/*------------------------------------------perspn---------------------------- */}
 
-                                <br />
 
-                                <button className='btn btn-success' type="submit">Book Now</button>
-                            </form>
-                        </p>
-                        <div>
+                                    <input
 
+                                        ref={valueRaf}
+                                        onChange={() => setTotalPrice(valueRaf.current?.value * firstPrice)}
+                                        placeholder="Persone Number" type="number" className="input input-bordered input-primary w-3/5  my-2" />
+
+                                    <input
+                                        defaultValue="0"
+                                        readOnly
+                                        value={totalprice}
+                                        placeholder="Persone Number" type="number" {...register("personPrice", { required: true })} className="input input-bordered input-primary w-3/5  my-2" />
+
+                                    <br />
+
+                                    <button className='btn btn-primary' type="submit">Book Now</button>
+                                </form>
+                            </p>
+                            <div>
+
+                            </div>
                         </div>
                     </div>
                 </div>

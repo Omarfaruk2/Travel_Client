@@ -16,7 +16,7 @@ const Japan = () => {
             res.json()
         )
     )
-    if (isLoading) {
+    if (isLoading || !data) {
         return <Loading />
     }
 
