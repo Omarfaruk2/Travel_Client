@@ -16,10 +16,14 @@ const Dashboard = () => {
                 <label htmlFor="Dashboard-SIdebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-300 text-base-content">
                     {/* <!-- Sidebar content here --> */}
-                    <li><Link to="/dashboard">My Profile</Link></li>
-                    <li><Link to="/dashboard/hotel">My Hotel Booking</Link></li>
-                    <li><Link to="/dashboard/product">My Order Items</Link></li>
-                    <li><Link to="/dashboard/country">My Country</Link></li>
+
+                    <li className='border-2 bg-primary text-white btn my-1'><Link to="/dashboard">My Profile</Link></li>
+                    <li className='border-2 bg-primary text-white btn my-1'><Link to="/dashboard/hotel">My Hotel Booking</Link></li>
+                    <li className='border-2 bg-primary text-white btn my-1'><Link to="/dashboard/additems">Add Travel Products</Link></li>
+                    <li className='border-2 bg-primary text-white btn my-1'><Link to="/dashboard/product">My Order Items</Link></li>
+                    <li className='border-2 bg-primary text-white btn my-1'><Link to="/dashboard/country">My Country</Link></li>
+                    <li className='border-2 bg-primary text-white btn my-1'><Link to="/dashboard/message">Message</Link></li>
+
                     {/* 
                     <li><Link to="/dashboard/addreview">Review</Link></li>
                     <li><Link to="/dashboard/additem">Add Item</Link></li>

@@ -34,7 +34,7 @@ const SellShopItems = () => {
 
     const { name, img, price, des } = item || {}
 
-
+    refetch()
 
     const onSubmit = (data) => {
         const email = user?.email
@@ -59,6 +59,7 @@ const SellShopItems = () => {
                 if (result.insertedId);
                 data = {}
                 navigate('/dashboard/product')
+                refetch()
             })
     }
 
@@ -95,7 +96,7 @@ const SellShopItems = () => {
                                 defaultValue={1} placeholder="Count" type="number" className="input input-bordered input-primary w-1/4 mx-4  my-2" />
 
 
-                            <input placeholder="Your Room Count" type="number"
+                            <input placeholder="" type="number"
                                 readOnly
                                 value={itemPrice}
                                 {...register("itemPrice", { required: true })} className="input input-bordered input-primary w-1/4 mx-4  my-2" />

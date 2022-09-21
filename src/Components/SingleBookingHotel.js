@@ -71,8 +71,10 @@ const SingleBookingHotel = () => {
             .then(result => {
                 if (result.insertedId);
                 data = {}
-                navigate('/dashboard/country')
+                navigate('/dashboard/hotel')
             })
+
+        console.log(realdata)
 
     }
 

@@ -20,7 +20,7 @@ const Japan = () => {
         return <Loading />
     }
 
-    // console.log(data, "america win ")
+    console.log(data, "america win ")
 
 
 

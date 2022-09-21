@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
+import swal from 'sweetalert'
 import auth from '../firebase.init'
 import Loading from '../Share/Loading'
 
@@ -10,7 +11,8 @@ const Myproducts = () => {
     const [user, loading,] = useAuthState(auth)
 
     const email = user?.email
-    const [amount, setAmount] = useState(10)
+
+    const [amount, setAmount] = useState(0)
 
     const { isLoading, error, data, refetch } = useQuery(['repoData'], () =>
         fetch(`http://localhost:5000/myorder?email=${email}`).then(res =>
@@ -34,22 +36,39 @@ const Myproducts = () => {
 
     const handleDelete = (id) => {
 
-        const url = `http://localhost:5000/order/${id}`
-        fetch(url, {
-            method: "DELETE"
+        swal({
+            title: "Are you  want to remove Booking?",
+            text: "Once deleted, you will not be able to recover user!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
         })
-            .then(res => res.json())
-            .then(data => {
-                if (data?.deletedCount > 0) {
-                    console.log(data, "Success to delete")
+            .then((willDelete) => {
+
+                if (willDelete) {
                     refetch()
+                    swal("Successfullly remove your boking", {
+                        icon: "success",
+                    })
+
+                    const url = `http://localhost:5000/order/${id}`
+                    fetch(url, {
+                        method: "DELETE"
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data?.deletedCount > 0) {
+                                console.log(data, "Success to delete")
+                                refetch()
+                            }
+                        })
+
+                } else {
+                    swal("Failed to remove booking")
                 }
             })
-
     }
-
     refetch()
-
     return (
         <div>
             <p className='text-center text-3xl'>This is products page</p>
@@ -109,13 +128,11 @@ const Myproducts = () => {
                     <div className="card w-96 bg-base-100 shadow-2xl mx-auto">
                         <div className="card-body">
                             <p className='font-bold text-2xl '>Your order product price is :$<span className='text-red-600'>{amount}</span></p>
-                            <button className='btn btn-success btn-sm'>Pay</button>
+                            <button className='btn btn-primary text-white btn-sm'>Pay</button>
                         </div>
                     </div>
-
-
-
                 </div>
+
             </div>
         </div>
     )

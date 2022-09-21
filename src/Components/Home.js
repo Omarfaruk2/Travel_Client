@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../Share/Navbar'
 import Articles from './Articles'
 import Banner from './Banner'
+import Contact from './Contact'
 import Destinations from './Destinations'
 import Gelary from './Gelary'
 import Service from './Service'
@@ -15,6 +16,7 @@ const Home = () => {
             <Service />
             <Gelary />
             <Articles />
+            <Contact />
         </div>
     )
 }

@@ -66,6 +66,8 @@ const Details = () => {
                 data = {}
                 navigate('/dashboard/country')
             })
+
+        console.log(updateForm, "hello")
     }
 
     return (

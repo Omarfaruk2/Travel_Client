@@ -13,7 +13,10 @@ const Service = () => {
             <div className='grid grid-cols-3  mx-auto w-5/6 mt-10'>
 
 
-                <div className="card mx-2 shadow-xl pt-3">
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
+                    className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
                             <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
@@ -26,7 +29,10 @@ const Service = () => {
                 </div>
 
                 {/* 2 */}
-                <div className="card mx-2 shadow-xl pt-3">
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
+                    className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
                             <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
@@ -40,7 +46,10 @@ const Service = () => {
 
 
                 {/* 3 */}
-                <div className="card mx-2 shadow-xl pt-3">
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
+                    className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
                             <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
@@ -54,7 +63,10 @@ const Service = () => {
 
 
                 {/* 4 */}
-                <div className="card mx-2 shadow-xl pt-3">
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
+                    className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
                             <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
@@ -67,7 +79,10 @@ const Service = () => {
                 </div>
 
                 {/* 5 */}
-                <div className="card mx-2 shadow-xl pt-3">
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
+                    className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
                             <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary
@@ -80,7 +95,10 @@ const Service = () => {
                 </div>
 
                 {/* 6 */}
-                <div className="card mx-2 shadow-xl pt-3">
+                <div
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
+                    className="card mx-2 shadow-xl pt-3">
                     <div className="card-body">
                         <div className='text-center mx-auto'>
                             <p className='text-center mx-auto'><Icon className='text-8xl inline p-3 bg-primary

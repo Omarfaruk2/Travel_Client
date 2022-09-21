@@ -12,7 +12,11 @@ const Destinations = () => {
             </div>
             <div className='grid grid-cols-3 w-11/12 mx-auto gap-x-3'>
 
-                <Link to={"/tour/japan"} >
+                <Link
+                    data-aos="zoom-in"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    to={"/tour/japan"} >
                     <div className='cus-card'>
                         <img className='image' src="https://img.freepik.com/free-photo/cherry-blossoms-spring-chureito-pagoda-fuji-mountain-japan_335224-177.jpg?size=626&ext=jpg&ga=GA1.2.1198299981.1652771125" alt="" />
                     </div>
@@ -22,7 +26,11 @@ const Destinations = () => {
                     </div>
                 </Link>
 
-                <Link to={"/tour/america"} >
+                <Link
+                    data-aos="zoom-in"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    to={"/tour/america"} >
                     <div className='cus-card'>
                         <img className="image" src="https://images.unsplash.com/photo-1515419682769-91a8a6bdaf68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHVuaXRlZCUyMHN0YXRlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
                     </div>
@@ -31,7 +39,11 @@ const Destinations = () => {
                     </div>
                 </Link>
 
-                <Link to={"/tour/india"} >
+                <Link
+                    data-aos="zoom-in"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    to={"/tour/india"} >
                     <div className='cus-card'>
                         <img className="image" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aW5kaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
                     </div>
@@ -39,7 +51,11 @@ const Destinations = () => {
                     <p className='font-bold text-3xl'>India</p>
                 </Link>
 
-                <Link to={"/tour/koria"} >
+                <Link
+                    data-aos="zoom-in"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    to={"/tour/koria"} >
                     <div className='cus-card'>
                         <img className="image" src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8a29yZWF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
                     </div>
@@ -47,7 +63,11 @@ const Destinations = () => {
                     <p className='font-bold text-3xl'>Korea</p>
                 </Link>
 
-                <Link to={"/tour/switzerland"} >
+                <Link
+                    data-aos="zoom-in"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    to={"/tour/switzerland"} >
                     <div className='cus-card'>
                         <img className="image" src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3dpdHplcmxhbmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" />
                     </div>
@@ -55,7 +75,11 @@ const Destinations = () => {
                     <p className='font-bold text-3xl'>Switzerland</p>
                 </Link>
 
-                <Link to={"/tour/greenland"} >
+                <Link
+                    data-aos="zoom-in"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    to={"/tour/greenland"} >
                     <div className='cus-card'>
                         <img className="image" src="https://images.unsplash.com/photo-1573996987033-47fd3a4ca35e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGdyZWVubGFuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
                     </div>

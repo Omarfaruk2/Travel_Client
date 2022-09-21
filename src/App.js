@@ -11,6 +11,7 @@ import Japan from './Components/Japan'
 import SingleBookingHotel from './Components/SingleBookingHotel'
 import Dashboard from './Dashboard/Dashboard'
 import HotelBooking from './Dashboard/HotelBooking'
+import Message from './Dashboard/Message'
 import MyCountry from './Dashboard/MyCountry'
 import Myproducts from './Dashboard/Myproducts'
 import Myprofile from './Dashboard/Myprofile'
@@ -19,11 +20,17 @@ import SellShopItems from './Pages/Shop/SellShopItems'
 import Shop from './Pages/Shop/Shop'
 import Footer from './Share/Footer'
 import Navbar from './Share/Navbar'
+import "./App.css"
+import AddItems from './Dashboard/AddItems'
 
-// ..
+
 AOS.init()
 
+
 function App() {
+
+
+
 
   return (
     <div className='bg-white'>
@@ -35,12 +42,13 @@ function App() {
         <Route path='/login' element={<Login />} />
 
 
-        {/* nasted route */}
         <Route path="dashboard" element={<><Dashboard /></>} >
           <Route index element={<Myprofile />}></Route>
           <Route path='hotel' element={< HotelBooking />}></Route >
           <Route path='product' element={< Myproducts />}></Route >
           <Route path='country' element={< MyCountry />}></Route >
+          <Route path='message' element={< Message />}></Route >
+          <Route path='additems' element={< AddItems />}></Route >
         </Route>
 
 

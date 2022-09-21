@@ -8,7 +8,12 @@ const SingleShop = ({ singleItem }) => {
 
     return (
         <div>
-            <div className="card  bg-base-100 shadow-xl">
+            <div
+                data-aos="zoom-in"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+
+                className="card  bg-base-100 shadow-xl">
                 <div className="card-body">
                     <img src={img} alt="" />
                     <h2 className="card-title">Card title!</h2>

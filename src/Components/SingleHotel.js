@@ -7,7 +7,11 @@ const SingleHotel = ({ hotel }) => {
 
 
     return (
-        <div className="card grid grid-cols-2 p-3 bg-base-100 shadow-xl">
+        <div
+            data-aos="zoom-in"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card grid grid-cols-2 p-3 bg-base-100 shadow-xl">
 
             <figure><img src={hotelImg} alt="Movie" /></figure>
 

@@ -89,7 +89,7 @@ export default function Gelary() {
                                     'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                                     selected
                                         ? 'bg-white shadow'
-                                        : 'text-black bg-green-400 font-bold'
+                                        : 'text-black font-mono bg-green-400 font-bold'
                                 )
                             }
                         >

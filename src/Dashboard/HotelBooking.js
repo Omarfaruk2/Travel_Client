@@ -1,17 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useQuery } from 'react-query'
+import swal from 'sweetalert'
 import auth from '../firebase.init'
 import Loading from '../Share/Loading'
 
 const HotelBooking = () => {
     const [user, loading,] = useAuthState(auth)
-
+    const [amount, setAmount] = useState(0)
     const { isLoading, error, data, refetch } = useQuery(['bookingHotel'], () =>
         fetch(`http://localhost:5000/mybookiinghotel?email=${user?.email}`).then(res =>
             res.json()
         )
     )
+
+
+    useEffect(() => {
+        const set1 = new Set(data)
+        let kalu = 0
+        set1.forEach(element => {
+            kalu = parseInt(kalu) + parseInt(element?.roomPrice)
+            setAmount(kalu) // 👉️ one, two, three, four
+        })
+    }, [data])
+
+
+
 
     if (isLoading || loading) {
         return <Loading />
@@ -21,17 +35,40 @@ const HotelBooking = () => {
 
     const handleDelete = (id) => {
 
-        const url = `http://localhost:5000/bookingHotel/${id}`
-        fetch(url, {
-            method: "DELETE"
+        swal({
+            title: "Are you  want to remove Booking?",
+            text: "Once deleted, you will not be able to recover user!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
         })
-            .then(res => res.json())
-            .then(data => {
-                if (data?.deletedCount > 0) {
-                    console.log(data, "Success to delete")
+            .then((willDelete) => {
+
+
+                if (willDelete) {
                     refetch()
+                    swal("Successfullly remove your boking", {
+                        icon: "success",
+                    })
+
+                    const url = `http://localhost:5000/bookingHotel/${id}`
+                    fetch(url, {
+                        method: "DELETE"
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data?.deletedCount > 0) {
+                                console.log(data, "Success to delete")
+                                refetch()
+                            }
+                        })
+
+
+                } else {
+                    swal("Failed to remove booking")
                 }
             })
+
 
     }
 
@@ -39,8 +76,9 @@ const HotelBooking = () => {
 
     return (
         <div>
-            <h2>Hello hotel boking</h2>
+            <h2>Your Hotel booking number, {data?.length}</h2>
             <div>
+
                 <div>
                     <div className="overflow-x-auto">
                         <table className="table w-full">
@@ -94,6 +132,21 @@ const HotelBooking = () => {
                 </div>
 
             </div>
+
+
+            <div className='my-10'>
+                <hr className='border-slate-900' />
+
+                <div className="card w-1/3 bg-base-100 shadow-2xl mx-auto">
+                    <div className="card-body">
+                        <p className='font-bold text-2xl '>
+                            Your order product price is $<span className='text-red-600'>{amount}</span></p>
+                        <button className='btn btn-primary text-white btn-sm'>Pay</button>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     )
 }
