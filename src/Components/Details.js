@@ -31,7 +31,7 @@ const Details = () => {
     const { register, formState: { errors }, handleSubmit } = useForm()
 
     const { isLoading, error, data, refetch } = useQuery(['repoData'], () =>
-        fetch(`http://localhost:5000/country/${name}/${id}`).then(res =>
+        fetch(`https://infinite-island-88247.herokuapp.com/country/${name}/${id}`).then(res =>
             res.json()
         )
     )
@@ -52,7 +52,7 @@ const Details = () => {
         const firstimg = pakage?.firstimg
         const updateForm = { ...formData, firstimg: firstimg }
 
-        const url = "http://localhost:5000/countryFlightbooking"
+        const url = "https://infinite-island-88247.herokuapp.com/countryFlightbooking"
         fetch(url, {
             method: 'POST',
             headers: {

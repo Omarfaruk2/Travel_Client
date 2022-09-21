@@ -11,7 +11,7 @@ const Shop = () => {
     const [user, loading,] = useAuthState(auth)
 
     const { isLoading, error, data, refetch } = useQuery(['shopItems'], () =>
-        fetch("http://localhost:5000/shop").then(res =>
+        fetch("https://infinite-island-88247.herokuapp.com/shop").then(res =>
             res.json()
         )
     )

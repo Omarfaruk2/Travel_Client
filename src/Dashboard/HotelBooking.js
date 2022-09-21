@@ -9,7 +9,7 @@ const HotelBooking = () => {
     const [user, loading,] = useAuthState(auth)
     const [amount, setAmount] = useState(0)
     const { isLoading, error, data, refetch } = useQuery(['bookingHotel'], () =>
-        fetch(`http://localhost:5000/mybookiinghotel?email=${user?.email}`).then(res =>
+        fetch(`https://infinite-island-88247.herokuapp.com/mybookiinghotel?email=${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -51,7 +51,7 @@ const HotelBooking = () => {
                         icon: "success",
                     })
 
-                    const url = `http://localhost:5000/bookingHotel/${id}`
+                    const url = `https://infinite-island-88247.herokuapp.com/bookingHotel/${id}`
                     fetch(url, {
                         method: "DELETE"
                     })

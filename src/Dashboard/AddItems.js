@@ -36,7 +36,7 @@ const AddItems = () => {
                     }
 
 
-                    const url = "http://localhost:5000/shop"
+                    const url = "https://infinite-island-88247.herokuapp.com/shop"
                     fetch(url, {
                         method: 'POST',
                         headers: {

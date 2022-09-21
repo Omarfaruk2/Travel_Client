@@ -31,7 +31,7 @@ const SingleBookingHotel = () => {
 
 
     const { isLoading, error, data } = useQuery(['singleHotel'], () =>
-        fetch(`http://localhost:5000/hotel/${id}`).then(res =>
+        fetch(`https://infinite-island-88247.herokuapp.com/hotel/${id}`).then(res =>
             res.json())
     )
 
@@ -59,7 +59,7 @@ const SingleBookingHotel = () => {
             hotelname, roomNumber, email, name, date, phone, roomPrice, hotelImg
         }
 
-        const url = "http://localhost:5000/bookingHotel"
+        const url = "https://infinite-island-88247.herokuapp.com/bookingHotel"
         fetch(url, {
             method: 'POST',
             headers: {

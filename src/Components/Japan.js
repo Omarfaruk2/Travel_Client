@@ -12,7 +12,7 @@ const Japan = () => {
     // console.log(name)
 
     const { isLoading, error, data } = useQuery(['repoData'], () =>
-        fetch(`http://localhost:5000/country/${name}`).then(res =>
+        fetch(`https://infinite-island-88247.herokuapp.com/country/${name}`).then(res =>
             res.json()
         )
     )

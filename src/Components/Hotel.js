@@ -7,7 +7,7 @@ const Hotel = () => {
 
 
     const { isLoading, error, data } = useQuery(['hotel'], () =>
-        fetch("http://localhost:5000/hotel").then(res =>
+        fetch("https://infinite-island-88247.herokuapp.com/hotel").then(res =>
             res.json()
         )
     )
