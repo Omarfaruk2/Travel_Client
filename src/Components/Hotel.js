@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useQuery } from 'react-query'
 import Loading from '../Share/Loading'
 import SingleHotel from './SingleHotel'
 
 const Hotel = () => {
 
+    // search option-----------------------
+    const [filter, setFillter] = useState("")
 
-    const { isLoading, error, data } = useQuery(['hotel'], () =>
+    const searchText = (event) => {
+        setFillter(event.target.value)
+    }
+    // search option-----------------------
+
+
+    const { isLoading, error, data, refetch } = useQuery(['hotel'], () =>
         fetch("https://infinite-island-88247.herokuapp.com/hotel").then(res =>
             res.json()
         )
@@ -15,8 +23,18 @@ const Hotel = () => {
         return <Loading />
     }
 
-    // console.log(data)
 
+    let dataSearch = data.filter(item => {
+        return Object.keys(item).some(key =>
+            item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
+        )
+    })
+
+
+
+
+
+    refetch()
     return (
         <div>
             <div>
@@ -38,29 +56,27 @@ const Hotel = () => {
                 <div>
                     <h2 className='font-serif text-center text-4xl my-10'>POPULAR HOTELS</h2>
 
+                    {/* Search option  start--------------------*/}
+                    <p className='font-bold text-xl my-5 text-center'>Search Your Best Hotel</p>
+
+                    <p className='text-center'>
+                        <input
+                            value={filter}
+                            onChange={searchText.bind(this)}
+                            type="text" placeholder="Type here" className="input text-xl input-bordered input-primary w-1/5 mx-auto" />
+                    </p>
+
+                    {/* Search option  end------------------*/}
+
+
                     <div className='grid grid-cols-2 w-3/4 mx-auto gap-3 '>
 
                         {
-                            data?.map(hotel => <SingleHotel
+                            dataSearch?.map(hotel => <SingleHotel
                                 key={hotel?._id}
                                 hotel={hotel}
                             ></SingleHotel>)
                         }
-
-
-                        {/*
-                         
-
-                        <div className="card card-side bg-base-100 shadow-xl">
-                            <figure><img src="https://placeimg.com/200/280/arch" alt="Movie" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title">New movie is released!</h2>
-                                <p>Click the button to watch on Jetflix app.</p>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Watch</button>
-                                </div>
-                            </div>
-                        </div> */}
 
                     </div>
 

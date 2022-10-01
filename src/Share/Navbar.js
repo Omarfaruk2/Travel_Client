@@ -39,7 +39,7 @@ const Navbar = () => {
                                 <li><>Item 3</></li>
                             </ul>
                         </div>
-                        <Link to="/" className="btn btn-ghost text-white normal-case text-xl">G Ture</Link>
+                        <Link to="/" className="btn btn-ghost text-white normal-case text-xl">Global Tour</Link>
                     </div>
                     <div className="navbar-end hidden lg:flex">
                         <ul className="menu me-auto menu-horizontal p-0 font-bold text-sm">

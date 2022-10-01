@@ -47,7 +47,7 @@ function App() {
           <Route path='hotel' element={< HotelBooking />}></Route >
           <Route path='product' element={< Myproducts />}></Route >
           <Route path='country' element={< MyCountry />}></Route >
-          <Route path='message' element={< Message />}></Route >
+          {/* <Route path='message' element={< Message />}></Route > */}
           <Route path='additems' element={< AddItems />}></Route >
         </Route>
 

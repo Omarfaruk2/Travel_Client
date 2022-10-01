@@ -16,7 +16,8 @@ const SingleHotel = ({ hotel }) => {
             <figure><img src={hotelImg} alt="Movie" /></figure>
 
             <div className="card-body">
-                <h2 className="card-title">{hotelname}</h2>
+                <h2 className="card-title">{hotelname},</h2>
+                <h2 className="card-title">{country}</h2>
                 <p className='text-xl'><span className=' text-red-400'>${price}</span>  per night + per Room</p>
                 <div className="card-actions justify-end">
                     <button onClick={() => navigate(`/hotel/${_id}`)} className="btn btn-primary text-white">Book Now</button>

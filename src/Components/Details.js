@@ -39,7 +39,7 @@ const Details = () => {
         return <Loading />
     }
 
-    // refetch()
+    refetch()
 
     const { displayName, email } = user || {}
 
@@ -65,11 +65,12 @@ const Details = () => {
                 if (result.insertedId);
                 data = {}
                 navigate('/dashboard/country')
+                refetch()
             })
-
+        refetch()
         console.log(updateForm, "hello")
     }
-
+    refetch()
     return (
         <div>
             <div>

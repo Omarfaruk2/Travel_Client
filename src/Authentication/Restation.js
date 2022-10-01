@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from 'react-hook-form'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../firebase.init'
+import useToken from '../Hooks/useToken'
 import Loading from '../Share/Loading'
 
 const Restation = () => {
@@ -17,6 +18,7 @@ const Restation = () => {
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth)
 
     const [updateProfile, updating,] = useUpdateProfile(auth)
+    const [token] = useToken(user || guser || {})
 
     const handleGoogle = () => {
         signInWithGoogle()
@@ -43,7 +45,7 @@ const Restation = () => {
         return <Loading />
     }
 
-    if (user || guser) {
+    if (token) {
         navigate(from, { replace: true })
     }
 
