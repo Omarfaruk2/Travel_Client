@@ -69,7 +69,7 @@ const Hotel = () => {
                     {/* Search option  end------------------*/}
 
 
-                    <div className='grid grid-cols-2 w-3/4 mx-auto gap-3 '>
+                    <div className='grid lg:grid-cols-2 sm:grid-cols-1 w-3/4 mx-auto gap-3 '>
 
                         {
                             dataSearch?.map(hotel => <SingleHotel

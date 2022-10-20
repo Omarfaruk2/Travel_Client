@@ -94,7 +94,7 @@ const SingleBookingHotel = () => {
 
             {/* form */}
 
-            <div className='grid grid-cols-3 w-4/5 mt-10 mx-auto mb-32 gap-x-5'>
+            <div className='grid lg:grid-cols-3 sm:grid-cols-1 w-4/5 mt-10 mx-auto mb-32 gap-x-5'>
                 <div className='col-span-2'>
                     <div>
                         <img src={hotelImg} alt="" />

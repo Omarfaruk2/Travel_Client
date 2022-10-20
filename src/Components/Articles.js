@@ -20,7 +20,7 @@ const Articles = () => {
             <div>
                 <p className='text-4xl text-center text-black font-bold'>Articles & Tips</p>
 
-                <div className='grid grid-cols-3 w-11/12 mx-auto'>
+                <div className='grid lg:grid-cols-3 sm:grid-cols-1 w-11/12 mx-auto'>
                     {
                         data?.map(art => <SingleArticsal
                             art={art}

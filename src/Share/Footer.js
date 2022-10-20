@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className='pb-5 bg-black'>
             <footer className="mb-8">
-                <div className='grid grid-cols-3 w-5/6 mx-auto '>
+                <div className='grid lg:grid-cols-3 sm:grid-cols-1 w-5/6 mx-auto '>
 
                     {/* first coloum */}
                     <div className='mt-10'>

@@ -113,7 +113,7 @@ export default function Gelary() {
                                         className="relative rounded-md p-3 hover:bg-gray-100"
                                     >
 
-                                        <li className='grid grid-cols-4 gap-1 overflow-hidden'>
+                                        <li className='grid lg:grid-cols-4 sm:grid-cols-2p gap-1 overflow-hidden'>
 
                                             {
                                                 post?.img && <img data-aos="zoom-in-up" data-aos-easing="linear"

@@ -75,7 +75,7 @@ const SellShopItems = () => {
             </div>
 
 
-            <div className='grid grid-cols-2 w-5/6 mx-auto mt-10 mb-20'>
+            <div className='grid lg:grid-cols-2 sm:grid-cols-1 w-5/6 mx-auto mt-10 mb-20'>
 
                 <div className='mx-auto'>
                     <img className='w-full' src={img} alt="item" />

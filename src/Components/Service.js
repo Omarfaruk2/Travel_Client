@@ -10,7 +10,7 @@ const Service = () => {
                 <p className='text-center'>That is why our tours and travel experiences in Riga, <br /> Dubai and the Baltics are rated as EXCELLENT by the most reviewers.</p>
             </div>
 
-            <div className='grid grid-cols-3  mx-auto w-5/6 mt-10'>
+            <div className='grid lg:grid-cols-3 sm:grid-cols-1  mx-auto w-5/6 mt-10'>
 
 
                 <div

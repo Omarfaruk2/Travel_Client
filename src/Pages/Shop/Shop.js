@@ -35,7 +35,7 @@ const Shop = () => {
             <div>
                 <h2 className='text-center font-bold text-4xl my-10'>Our Products</h2>
 
-                <div className='grid grid-cols-3 gap-5 w-11/12 mx-auto mb-10'>
+                <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-5 w-11/12 mx-auto mb-10'>
                     {
                         data?.map(singleItem => <SingleShop
                             singleItem={singleItem}
