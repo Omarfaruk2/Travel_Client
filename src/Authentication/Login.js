@@ -48,7 +48,7 @@ const Login = () => {
             {/* <button onClick={() => signInWithGoogle()}>Sign In</button> */}
 
 
-            <div className="card w-1/4 mt-20 mx-auto   shadow bg-green-500">
+            <div className="card lg:w-2/5 sm:w-1/2 mt-20 mx-auto   shadow bg-green-500">
                 <div className="card-body w-full mx-auto ">
 
                     <form onSubmit={handleSubmit(onSubmit)}>
