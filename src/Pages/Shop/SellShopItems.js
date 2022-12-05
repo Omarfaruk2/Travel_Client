@@ -19,7 +19,7 @@ const SellShopItems = () => {
     const { register, formState: { errors }, handleSubmit } = useForm()
 
     const { isLoading, error, data, refetch } = useQuery(['signleITem'], () =>
-        fetch(`https://infinite-island-88247.herokuapp.com/shop/${id}`).then(res =>
+        fetch(`https://travel-server-x9w3.onrender.com/shop/${id}`).then(res =>
             res.json()
         )
     )
@@ -46,7 +46,7 @@ const SellShopItems = () => {
         const shopitem = { email, itemCount, name, img, itemPrice }
 
 
-        const url = "https://infinite-island-88247.herokuapp.com/order"
+        const url = "https://travel-server-x9w3.onrender.com/order"
         fetch(url, {
             method: 'POST',
             headers: {

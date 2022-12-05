@@ -15,7 +15,7 @@ const Myproducts = () => {
     const [amount, setAmount] = useState(0)
 
     const { isLoading, error, data, refetch } = useQuery(['repoData'], () =>
-        fetch(`https://infinite-island-88247.herokuapp.com/myorder?email=${email}`).then(res =>
+        fetch(`https://travel-server-x9w3.onrender.com/myorder?email=${email}`).then(res =>
             res.json()
         )
     )
@@ -51,7 +51,7 @@ const Myproducts = () => {
                         icon: "success",
                     })
 
-                    const url = `https://infinite-island-88247.herokuapp.com/order/${id}`
+                    const url = `https://travel-server-x9w3.onrender.com/order/${id}`
                     fetch(url, {
                         method: "DELETE"
                     })

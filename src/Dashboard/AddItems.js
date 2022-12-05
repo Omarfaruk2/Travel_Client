@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 
 const AddItems = () => {
-    const navigate = useNavigate()
 
+    const navigate = useNavigate()
 
     const { register, formState: { errors }, handleSubmit } = useForm()
 
@@ -36,7 +36,7 @@ const AddItems = () => {
                     }
 
 
-                    const url = "https://infinite-island-88247.herokuapp.com/shop"
+                    const url = "https://travel-server-x9w3.onrender.com/shop"
                     fetch(url, {
                         method: 'POST',
                         headers: {
@@ -50,7 +50,6 @@ const AddItems = () => {
                             data = {}
                             navigate('/shop')
                         })
-
 
 
                 }

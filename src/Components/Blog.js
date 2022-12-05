@@ -5,7 +5,7 @@ import UseBolg from '../Hooks/UseBolg'
 const Blog = () => {
 
     const { isLoading, error, data } = useQuery(['repoData'], () =>
-        fetch('https://infinite-island-88247.herokuapp.com/blog').then(res =>
+        fetch('https://travel-server-x9w3.onrender.com/blog').then(res =>
             res.json()
         )
     )

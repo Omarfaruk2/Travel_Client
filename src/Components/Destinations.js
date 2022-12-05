@@ -26,23 +26,6 @@ const Destinations = () => {
                         </div>
                     </div>
 
-                    {/* <div className=''>
-                        <p className='font-bold text-3xl'>Japan</p>
-                    </div> */}
-
-
-                    {/* <div className='card cus-card  mt-3 w-full rounded-none'>
-                        <img className='image' src="https://htmldemo.net/jantrik/jantrik/img/banner/1.png" alt="" />
-                        <div className='behind'>
-                            <p className='mb-2'>Industrial Complex</p>
-                        </div>
-                    </div> */}
-
-
-
-
-
-
                 </Link>
 
                 <Link

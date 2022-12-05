@@ -14,7 +14,7 @@ const Myprofile = () => {
     const { register, formState: { errors }, handleSubmit } = useForm()
 
     const { isLoading, error, data } = useQuery(['updateuserdata'], () =>
-        fetch(`https://infinite-island-88247.herokuapp.com/updateuser/${user?.email}`).then(res =>
+        fetch(`https://travel-server-x9w3.onrender.com/updateuser/${user?.email}`).then(res =>
             res.json()
         )
     )
@@ -48,7 +48,7 @@ const Myprofile = () => {
 
         const updateData = { email, address, country, education, phone, photo }
 
-        fetch(`https://infinite-island-88247.herokuapp.com/updateuser/${email}`, {
+        fetch(`https://travel-server-x9w3.onrender.com/updateuser/${email}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

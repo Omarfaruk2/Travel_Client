@@ -12,7 +12,7 @@ const MyCountry = () => {
     const email = user?.email
 
     const { isLoading, error, data, refetch } = useQuery(['countryData'], () =>
-        fetch(`https://infinite-island-88247.herokuapp.com/myordercountryFlightbooking?email=${email}`).then(res =>
+        fetch(`https://travel-server-x9w3.onrender.com/myordercountryFlightbooking?email=${email}`).then(res =>
             res.json()
         )
     )
@@ -53,7 +53,7 @@ const MyCountry = () => {
                     })
 
 
-                    const url = `https://infinite-island-88247.herokuapp.com/countryFlightbooking/${id}`
+                    const url = `https://travel-server-x9w3.onrender.com/countryFlightbooking/${id}`
                     fetch(url, {
                         method: "DELETE"
                     })

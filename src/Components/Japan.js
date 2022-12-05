@@ -19,7 +19,7 @@ const Japan = () => {
     // search option-----------------------
 
     const { isLoading, error, data, refetch } = useQuery(['repoData'], () =>
-        fetch(`https://infinite-island-88247.herokuapp.com/country/${name}`).then(res =>
+        fetch(`https://travel-server-x9w3.onrender.com/country/${name}`).then(res =>
             res.json()
 
         )
